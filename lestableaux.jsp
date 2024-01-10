@@ -38,6 +38,7 @@
 <% } %>
 
 
+
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 
 <%-- Récupération des deux premières valeurs --%>
@@ -45,8 +46,7 @@
 <% String valeur2_2 = request.getParameter("valeur2_2"); %>
 
 <%-- Vérification de l'existence des deux premières valeurs --%>
-<% if (valeur2_1 != null && !valeur2_1.isEmpty() &&
-     valeur2_2 != null && !valeur2_2.isEmpty()) { %>
+<% if (valeur2_1 != null && !valeur2_1.isEmpty() && valeur2_2 != null && !valeur2_2.isEmpty()) { %>
 
     <%-- Conversion des deux premières valeurs en double --%>
     <% double valeurSomme1 = Double.parseDouble(valeur2_1); %>
@@ -81,6 +81,7 @@
 <% } %>
 
 
+
 <h2>Exercice 4 : La valeur maximum</h2>
 
 <%-- Récupération de toutes les valeurs --%>
@@ -104,6 +105,7 @@
     <p>La valeur maximale est : <%= valeurMax %></p>
 
 <% } %>
+
 
 <h2>Exercice 5 : La valeur minimale</h2>
 
@@ -130,6 +132,7 @@
 <% } %>
 
 
+
 <h2>Exercice 6 : La valeur le plus proche de 0</h2>
 
 <%-- Récupération de toutes les valeurs --%>
@@ -153,6 +156,7 @@
     <p>La valeur la plus proche de 0 est : <%= valeurPlusProcheDe0 %></p>
 
 <% } %>
+
 
 
 <h2>Exercice 7 : La valeur le plus proche de 0 (2° version)</h2>
@@ -185,6 +189,7 @@
     <% } %>
 
 <% } %>
+
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
