@@ -31,46 +31,52 @@
    
     
 <h2>Exercice 1 : Comparaison 1</h2>
-import java.util.Scanner;
 
-public class exo1{
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez la valeur de A : ");
-        int a = scanner.nextInt();
-        
-        System.out.print("Entrez la valeur de B : ");
-        int b = scanner.nextInt();
-        
-        System.out.print("Entrez la valeur de C : ");
-        int c = scanner.nextInt();
-        
-        if (c > a && c < b) {
-            System.out.println("Oui, C est compris entre A et B.");
-        } else {
-            System.out.println("Non, C n'est pas compris entre A et B.");
-        }
-    }
-}
+<%-- Récupération des valeurs A, B et C --%>
+<% String valeurA = request.getParameter("a"); %>
+<% String valeurB = request.getParameter("b"); %>
+<% String valeurC = request.getParameter("c"); %>
+
+<%-- Vérification de l'existence des valeurs --%>
+<% if (valeurA != null && !valeurA.isEmpty() &&
+     valeurB != null && !valeurB.isEmpty() &&
+     valeurC != null && !valeurC.isEmpty()) { %>
+
+    <%-- Conversion des valeurs en entiers --%>
+    <% int a = Integer.parseInt(valeurA); %>
+    <% int b = Integer.parseInt(valeurB); %>
+    <% int c = Integer.parseInt(valeurC); %>
+
+    <%-- Vérification de la condition et affichage du résultat --%>
+    <% if (c > a && c < b) { %>
+        <p>Oui, C est compris entre A et B.</p>
+    <% } else { %>
+        <p>Non, C n'est pas compris entre A et B.</p>
+    <% } %>
+
+<% } %>
+
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
-import java.util.Scanner;
 
-public class exo2 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre entier : ");
-        int nombre = scanner.nextInt();
-        
-        if (nombre % 2 == 0) {
-            System.out.println("Le nombre est pair.");
-        } else {
-            System.out.println("Le nombre est impair.");
-        }
-    }
-}
+<%-- Récupération du nombre --%>
+<% String valeurNombre = request.getParameter("nombre"); %>
+
+<%-- Vérification de l'existence du nombre --%>
+<% if (valeurNombre != null && !valeurNombre.isEmpty()) { %>
+
+    <%-- Conversion du nombre en entier --%>
+    <% int nombre = Integer.parseInt(valeurNombre); %>
+
+    <%-- Vérification de la parité et affichage du résultat --%>
+    <% if (nombre % 2 == 0) { %>
+        <p>Le nombre est pair.</p>
+    <% } else { %>
+        <p>Le nombre est impair.</p>
+    <% } %>
+
+<% } %>
+
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
