@@ -93,6 +93,7 @@
     <% } %>
 </ul>
 
+
 <h2>Exercice 3 : Modification du titre du film</h2>
 
 <%@ page import="your.package.Movie" %>
