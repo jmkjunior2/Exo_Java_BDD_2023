@@ -26,173 +26,195 @@
     </p>
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
-import java.util.Scanner;
 
-public class one {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre : ");
-        int nombre = scanner.nextInt();
-        
-        afficherEtoiles(nombre);
-    }
-    
-    public static void afficherEtoiles(int nombre) {
-        for (int i = 0; i < nombre; i++) {
-            for (int j = 0; j < 5; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurCarre = request.getParameter("valeur"); %>
+
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurCarre != null && !valeurCarre.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int nombreCarre = Integer.parseInt(valeurCarre); %>
+
+<%-- Boucle for pour afficher le carré d'étoiles --%>
+<p>
+<% for (int i = 0; i < nombreCarre; i++) { %>
+    <% for (int j = 0; j < 5; j++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
+
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
-import java.util.Scanner;
 
-public class two {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre : ");
-        int nombre = scanner.nextInt();
-        
-        afficherTriangle(nombre);
-    }
-    
-    public static void afficherTriangle(int nombre) {
-        for (int i = 1; i <= nombre; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurTriangle = request.getParameter("valeur"); %>
+
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurTriangle != null && !valeurTriangle.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int nombreTriangle = Integer.parseInt(valeurTriangle); %>
+
+<%-- Boucle for pour afficher le triangle rectangle gauche --%>
+<p>
+<% for (int i = 1; i <= nombreTriangle; i++) { %>
+    <% for (int j = 1; j <= i; j++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
+
 
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
-import java.util.Scanner;
 
-public class trois {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre : ");
-        int nombre = scanner.nextInt();
-        
-        afficherTriangleGauche(nombre);
-    }
-    
-    public static void afficherTriangleGauche(int nombre) {
-        for (int i = 1; i <= nombre; i++) {
-            for (int j = 1; j <= nombre - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= i; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurTriangleGauche = request.getParameter("valeur"); %>
+
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurTriangleGauche != null && !valeurTriangleGauche.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int nombreTriangleGauche = Integer.parseInt(valeurTriangleGauche); %>
+
+<%-- Boucle for pour afficher le triangle rectangle inversé --%>
+<p>
+<% for (int i = 1; i <= nombreTriangleGauche; i++) { %>
+    <% for (int j = 1; j <= nombreTriangleGauche - i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int k = 1; k <= i; k++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
 
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
-import java.util.Scanner;
 
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurTriangleDroite = request.getParameter("valeur"); %>
 
-public class quatre {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre : ");
-        int nombre = scanner.nextInt();
-        
-        afficherTriangleDroite(nombre);
-    }
-    
-    public static void afficherTriangleDroite(int nombre) {
-        for (int i = 1; i <= nombre; i++) {
-            for (int j = 1; j <= nombre - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= i; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurTriangleDroite != null && !valeurTriangleDroite.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int nombreTriangleDroite = Integer.parseInt(valeurTriangleDroite); %>
+
+<%-- Boucle for pour afficher le triangle rectangle 2 --%>
+<p>
+<% for (int i = 1; i <= nombreTriangleDroite; i++) { %>
+    <% for (int j = 1; j <= nombreTriangleDroite - i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int k = 1; k <= i; k++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
+
 
 
 <h2>Exercice 5 : Triangle isocele</h2>
 
-import java.util.Scanner;
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurTriangleIsocele = request.getParameter("valeur"); %>
 
-public class cinq {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("entrer le nb d'etoile : ");
-        int hauteur = scanner.nextInt();
-        
-        afficherTriangle(hauteur);
-    }
-    
-    public static void afficherTriangle(int hauteur) {
-        for (int i = 1; i <= hauteur; i++) {
-            for (int j = 1; j <= hauteur - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= 2 * i - 1; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-}
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurTriangleIsocele != null && !valeurTriangleIsocele.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int hauteurTriangleIsocele = Integer.parseInt(valeurTriangleIsocele); %>
+
+<%-- Boucle for pour afficher le triangle isocèle --%>
+<p>
+<% for (int i = 1; i <= hauteurTriangleIsocele; i++) { %>
+    <% for (int j = 1; j <= hauteurTriangleIsocele - i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int k = 1; k <= 2 * i - 1; k++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
+
 
 <h2>Exercice 6 : Le demi losange</h2>
-import java.util.Scanner;
 
-public class sept {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Entrez un nombre pour afficher sa table de multiplication : ");
-        int nombre = scanner.nextInt();
-        
-        afficherTableMultiplication(nombre);
-    }
-    
-    public static void afficherTableMultiplication(int nombre) {
-        System.out.println("Table de multiplication pour " + nombre + " :");
-        
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(nombre + " x " + i + " = " + (nombre * i));
-        }
-    }
-}
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurDemiLosange = request.getParameter("valeur"); %>
+
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurDemiLosange != null && !valeurDemiLosange.isEmpty()) { %>
+
+<%-- Conversion de la valeur en entier --%>
+<% int tailleDemiLosange = Integer.parseInt(valeurDemiLosange); %>
+
+<%-- Boucle for pour afficher le demi-losange --%>
+<p>
+<% for (int i = 1; i <= tailleDemiLosange; i++) { %>
+    <% for (int j = 1; j <= tailleDemiLosange - i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int k = 1; k <= i; k++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+
+<% for (int i = tailleDemiLosange - 1; i >= 1; i--) { %>
+    <p>
+    <% for (int j = 1; j <= tailleDemiLosange - i; j++) { %>
+        <%= "&nbsp;" %>
+    <% } %>
+    <% for (int k = 1; k <= i; k++) { %>
+        <%= "*" %>
+    <% } %>
+    </br>
+<% } %>
+
+</p>
+<% } %>
 
 <h2>Exercice 7 : La table de multiplication</h2>
-import java.util.Scanner;
 
-public class TableMultiplication {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurMultiplication = request.getParameter("valeur"); %>
 
-        System.out.println("Veuillez saisir le nombre pour la table de multiplication : ");
-        int nombre = scanner.nextInt();
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurMultiplication != null && !valeurMultiplication.isEmpty()) { %>
 
-        for (int i = 1; i <= 5; i++) {
-            int resultat = nombre * i;
-            System.out.println(nombre + " x " + i + " = " + resultat);
-        }
+<%-- Conversion de la valeur en entier --%>
+<% int nombreMultiplication = Integer.parseInt(valeurMultiplication); %>
 
-    }
-}
+<%-- Boucle for pour afficher la table de multiplication --%>
+<p>
+<% for (int i = 1; i <= 5; i++) { %>
+    <% int resultatMultiplication = nombreMultiplication * i; %>
+    <%= nombreMultiplication + " x " + i + " = " + resultatMultiplication %>
+    </br>
+<% } %>
+</p>
+
+<% } %>
+
 
 
 <% } %>
