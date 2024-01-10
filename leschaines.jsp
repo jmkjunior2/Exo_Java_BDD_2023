@@ -33,135 +33,137 @@
 
     
 <h2>Exercice 1 : Combien de 'e' dans notre chaine de charactère ?</h2>
-import java.util.Scanner;
 
-public class CompterLettreE {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération de la chaîne de caractères --%>
+<% String chaine = request.getParameter("chaine"); %>
 
-        System.out.println("Veuillez saisir une chaîne de caractères : ");
-        String chaine = scanner.nextLine();
+<%-- Vérification de l'existence de la chaîne --%>
+<% if (chaine != null && !chaine.isEmpty()) { %>
 
-        int compteurE = 0;
+    <%-- Initialisation du compteur --%>
+    <% int compteurE = 0; %>
 
-        for (int i = 0; i < chaine.length(); i++) {
-            if (chaine.charAt(i) == 'e' || chaine.charAt(i) == 'E') {
-                compteurE++;
-            }
-        }
+    <%-- Boucle for pour compter le nombre de 'e' --%>
+    <% for (int i = 0; i < chaine.length(); i++) { %>
+        <% if (chaine.charAt(i) == 'e' || chaine.charAt(i) == 'E') { %>
+            <% compteurE++; %>
+        <% } %>
+    <% } %>
 
-        System.out.println("Le nombre de 'e' dans la chaîne est : " + compteurE);
+    <p>Le nombre de 'e' dans la chaîne est : <%= compteurE %></p>
 
-        scanner.close();
-    }
-}
+<% } %>
+
 <h2>Exercice 2 : Affichage verticale</h2>
-import java.util.Scanner;
 
-public class AffichageVertical {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération du texte --%>
+<% String texte = request.getParameter("texte"); %>
 
-        System.out.println("Veuillez saisir un texte : ");
-        String texte = scanner.nextLine();
+<%-- Vérification de l'existence du texte --%>
+<% if (texte != null && !texte.isEmpty()) { %>
 
-        for (int i = 0; i < texte.length(); i++) {
-            System.out.println(texte.charAt(i));
-        }
+    <%-- Boucle for pour afficher le texte en vertical --%>
+    <p>
+    <% for (int i = 0; i < texte.length(); i++) { %>
+        <%= texte.charAt(i) %></br>
+    <% } %>
+    </p>
 
-        scanner.close();
-    }
-}
+<% } %>
+
 
 <h2>Exercice 3 : Retour à la ligne</h2>
-import java.util.Scanner;
 
-public class RetourALaLigne {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération de la phrase --%>
+<% String phrase = request.getParameter("phrase"); %>
 
-        System.out.println("Veuillez saisir une phrase : ");
-        String phrase = scanner.nextLine();
+<%-- Vérification de l'existence de la phrase --%>
+<% if (phrase != null && !phrase.isEmpty()) { %>
 
-        String[] mots = phrase.split(" ");
-        for (String mot : mots) {
-            System.out.println(mot);
-        }
+    <%-- Split de la phrase en mots --%>
+    <% String[] mots = phrase.split(" "); %>
 
-        scanner.close();
-    }
-}
+    <%-- Boucle for pour afficher les mots en colonne --%>
+    <p>
+    <% for (String mot : mots) { %>
+        <%= mot %></br>
+    <% } %>
+    </p>
+
+<% } %>
+
 
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
-import java.util.Scanner;
 
-public class LettreSurDeux {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération du texte --%>
+<% String texte = request.getParameter("texte"); %>
 
-        System.out.println("Veuillez saisir un texte : ");
-        String texte = scanner.nextLine();
+<%-- Vérification de l'existence du texte --%>
+<% if (texte != null && !texte.isEmpty()) { %>
 
-        for (int i = 0; i < texte.length(); i += 2) {
-            System.out.print(texte.charAt(i));
-        }
+    <%-- Boucle for pour afficher une lettre sur deux --%>
+    <p>
+    <% for (int i = 0; i < texte.length(); i += 2) { %>
+        <%= texte.charAt(i) %>
+    <% } %>
+    </p>
 
-        scanner.close();
-    }
-}
+<% } %>
+
 <h2>Exercice 5 : La phrase en verlant</h2>
-import java.util.Scanner;
 
-public class Verlan {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération de la phrase --%>
+<% String phrase = request.getParameter("phrase"); %>
 
-        System.out.println("Veuillez saisir une phrase : ");
-        String phrase = scanner.nextLine();
+<%-- Vérification de l'existence de la phrase --%>
+<% if (phrase != null && !phrase.isEmpty()) { %>
 
-        String[] mots = phrase.split(" ");
-        for (String mot : mots) {
-            for (int i = mot.length() - 1; i >= 0; i--) {
-                System.out.print(mot.charAt(i));
-            }
-            System.out.print(" ");
-        }
+    <%-- Split de la phrase en mots --%>
+    <% String[] mots = phrase.split(" "); %>
 
-        scanner.close();
-    }
-}
+    <%-- Boucle for pour afficher la phrase en verlan --%>
+    <p>
+    <% for (String mot : mots) { %>
+        <% for (int i = mot.length() - 1; i >= 0; i--) { %>
+            <%= mot.charAt(i) %>
+        <% } %>
+        <%= " " %>
+    <% } %>
+    </p>
+
+<% } %>
+
 <h2>Exercice 6 : Consonnes et voyelles</h2>
-import java.util.Scanner;
 
-public class ConsonnesVoyelles {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+<%-- Récupération de la phrase --%>
+<% String phrase = request.getParameter("phrase"); %>
 
-        System.out.println("Veuillez saisir une phrase : ");
-        String phrase = scanner.nextLine();
+<%-- Vérification de l'existence de la phrase --%>
+<% if (phrase != null && !phrase.isEmpty()) { %>
 
-        int compteurConsonnes = 0;
-        int compteurVoyelles = 0;
+    <%-- Initialisation des compteurs --%>
+    <% int compteurConsonnes = 0; %>
+    <% int compteurVoyelles = 0; %>
 
-        phrase = phrase.toLowerCase(); // Convertir la phrase en minuscules pour simplifier la comparaison
+    <%-- Conversion de la phrase en minuscules --%>
+    <% phrase = phrase.toLowerCase(); %>
 
-        for (int i = 0; i < phrase.length(); i++) {
-            char lettre = phrase.charAt(i);
-            if (lettre >= 'a' && lettre <= 'z') {
-                if (lettre == 'a' || lettre == 'e' || lettre == 'i' || lettre == 'o' || lettre == 'u') {
-                    compteurVoyelles++;
-                } else {
-                    compteurConsonnes++;
-                }
-            }
-        }
+    <%-- Boucle for pour compter les consonnes et les voyelles --%>
+    <% for (int i = 0; i < phrase.length(); i++) { %>
+        <% char lettre = phrase.charAt(i); %>
+        <% if (lettre >= 'a' && lettre <= 'z') { %>
+            <% if (lettre == 'a' || lettre == 'e' || lettre == 'i' || lettre == 'o' || lettre == 'u') { %>
+                <% compteurVoyelles++; %>
+            <% } else { %>
+                <% compteurConsonnes++; %>
+            <% } %>
+        <% } %>
+    <% } %>
 
-        System.out.println("Nombre de consonnes : " + compteurConsonnes);
-        System.out.println("Nombre de voyelles : " + compteurVoyelles);
+    <p>Nombre de consonnes : <%= compteurConsonnes %></p>
+    <p>Nombre de voyelles : <%= compteurVoyelles %></p>
 
-        scanner.close();
-    }
-}
+<% } %>
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
