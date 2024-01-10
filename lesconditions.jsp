@@ -31,17 +31,46 @@
    
     
 <h2>Exercice 1 : Comparaison 1</h2>
-<p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
-A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
-Exemple :</br>
-A = 10</br>
-B = 20</br>
-C = 15</br>
-Oui C est compris entre A et B</p>
+import java.util.Scanner;
+
+public class exo1{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Entrez la valeur de A : ");
+        int a = scanner.nextInt();
+        
+        System.out.print("Entrez la valeur de B : ");
+        int b = scanner.nextInt();
+        
+        System.out.print("Entrez la valeur de C : ");
+        int c = scanner.nextInt();
+        
+        if (c > a && c < b) {
+            System.out.println("Oui, C est compris entre A et B.");
+        } else {
+            System.out.println("Non, C n'est pas compris entre A et B.");
+        }
+    }
+}
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
-<p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
+import java.util.Scanner;
 
+public class exo2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Entrez un nombre entier : ");
+        int nombre = scanner.nextInt();
+        
+        if (nombre % 2 == 0) {
+            System.out.println("Le nombre est pair.");
+        } else {
+            System.out.println("Le nombre est impair.");
+        }
+    }
+}
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
