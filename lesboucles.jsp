@@ -45,7 +45,6 @@ public class one {
             }
             System.out.println();
         }
-      scanner.close();
     }
 }
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
@@ -68,7 +67,6 @@ public class one {
             }
             System.out.println();
         }
-      scanner.close();
     }
 }
 
@@ -95,7 +93,6 @@ public class trois {
             }
             System.out.println();
         }
-     scanner.close();
     }
 }
 
@@ -123,7 +120,7 @@ public class quatre {
             }
             System.out.println();
         }
-     scanner.close();
+
     }
 }
 
@@ -151,7 +148,6 @@ public class cinq {
             }
             System.out.println();
         }
-     scanner.close();
     }
 }
 
@@ -187,7 +183,6 @@ public class DemiLosange {
             System.out.println();
         }
 
-        scanner.close();
     }
 }
 
@@ -206,7 +201,6 @@ public class TableMultiplication {
             System.out.println(nombre + " x " + i + " = " + resultat);
         }
 
-        scanner.close();
     }
 }
 
