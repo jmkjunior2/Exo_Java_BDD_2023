@@ -32,13 +32,7 @@
     <p>Votre premier "e" est en : <%= position %></p>
 
     
-<h2>Exercice 1 : Combien de 'e' dans notre chaine de charactère ?</h2>
-
-<%-- Récupération de la chaîne de caractères --%>
-<% String chaine = request.getParameter("chaine"); %>
-
-<%-- Vérification de l'existence de la chaîne --%>
-<% if (chaine != null && !chaine.isEmpty()) { %>
+<h2>Exercice 1 : Combien de 'e' dans notre chaine de caractère ?</h2>
 
     <%-- Initialisation du compteur --%>
     <% int compteurE = 0; %>
@@ -52,36 +46,19 @@
 
     <p>Le nombre de 'e' dans la chaîne est : <%= compteurE %></p>
 
-<% } %>
-
-<h2>Exercice 2 : Affichage verticale</h2>
-
-<%-- Récupération du texte --%>
-<% String texte = request.getParameter("texte"); %>
-
-<%-- Vérification de l'existence du texte --%>
-<% if (texte != null && !texte.isEmpty()) { %>
+    <h2>Exercice 2 : Affichage verticale</h2>
 
     <%-- Boucle for pour afficher le texte en vertical --%>
     <p>
-    <% for (int i = 0; i < texte.length(); i++) { %>
-        <%= texte.charAt(i) %></br>
+    <% for (int i = 0; i < chaine.length(); i++) { %>
+        <%= chaine.charAt(i) %></br>
     <% } %>
     </p>
 
-<% } %>
-
-
-<h2>Exercice 3 : Retour à la ligne</h2>
-
-<%-- Récupération de la phrase --%>
-<% String phrase = request.getParameter("phrase"); %>
-
-<%-- Vérification de l'existence de la phrase --%>
-<% if (phrase != null && !phrase.isEmpty()) { %>
+    <h2>Exercice 3 : Retour à la ligne</h2>
 
     <%-- Split de la phrase en mots --%>
-    <% String[] mots = phrase.split(" "); %>
+    <% String[] mots = chaine.split(" "); %>
 
     <%-- Boucle for pour afficher les mots en colonne --%>
     <p>
@@ -90,40 +67,23 @@
     <% } %>
     </p>
 
-<% } %>
-
-
-<h2>Exercice 4 : Afficher une lettre sur deux</h2>
-
-<%-- Récupération du texte --%>
-<% String texte = request.getParameter("texte"); %>
-
-<%-- Vérification de l'existence du texte --%>
-<% if (texte != null && !texte.isEmpty()) { %>
+    <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 
     <%-- Boucle for pour afficher une lettre sur deux --%>
     <p>
-    <% for (int i = 0; i < texte.length(); i += 2) { %>
-        <%= texte.charAt(i) %>
+    <% for (int i = 0; i < chaine.length(); i += 2) { %>
+        <%= chaine.charAt(i) %>
     <% } %>
     </p>
 
-<% } %>
-
-<h2>Exercice 5 : La phrase en verlant</h2>
-
-<%-- Récupération de la phrase --%>
-<% String phrase = request.getParameter("phrase"); %>
-
-<%-- Vérification de l'existence de la phrase --%>
-<% if (phrase != null && !phrase.isEmpty()) { %>
+    <h2>Exercice 5 : La phrase en verlan</h2>
 
     <%-- Split de la phrase en mots --%>
-    <% String[] mots = phrase.split(" "); %>
+    <% String[] motsVerlan = chaine.split(" "); %>
 
     <%-- Boucle for pour afficher la phrase en verlan --%>
     <p>
-    <% for (String mot : mots) { %>
+    <% for (String mot : motsVerlan) { %>
         <% for (int i = mot.length() - 1; i >= 0; i--) { %>
             <%= mot.charAt(i) %>
         <% } %>
@@ -131,26 +91,18 @@
     <% } %>
     </p>
 
-<% } %>
-
-<h2>Exercice 6 : Consonnes et voyelles</h2>
-
-<%-- Récupération de la phrase --%>
-<% String phrase = request.getParameter("phrase"); %>
-
-<%-- Vérification de l'existence de la phrase --%>
-<% if (phrase != null && !phrase.isEmpty()) { %>
+    <h2>Exercice 6 : Consonnes et voyelles</h2>
 
     <%-- Initialisation des compteurs --%>
     <% int compteurConsonnes = 0; %>
     <% int compteurVoyelles = 0; %>
 
     <%-- Conversion de la phrase en minuscules --%>
-    <% phrase = phrase.toLowerCase(); %>
+    <% chaine = chaine.toLowerCase(); %>
 
     <%-- Boucle for pour compter les consonnes et les voyelles --%>
-    <% for (int i = 0; i < phrase.length(); i++) { %>
-        <% char lettre = phrase.charAt(i); %>
+    <% for (int i = 0; i < chaine.length(); i++) { %>
+        <% char lettre = chaine.charAt(i); %>
         <% if (lettre >= 'a' && lettre <= 'z') { %>
             <% if (lettre == 'a' || lettre == 'e' || lettre == 'i' || lettre == 'o' || lettre == 'u') { %>
                 <% compteurVoyelles++; %>
@@ -162,8 +114,6 @@
 
     <p>Nombre de consonnes : <%= compteurConsonnes %></p>
     <p>Nombre de voyelles : <%= compteurVoyelles %></p>
-
-<% } %>
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
